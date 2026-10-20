@@ -487,6 +487,7 @@ h1, h2, h3, h4 {
   font-size: 1.5rem;
   margin-bottom: 2rem;
   color: var(--texto-suave);
+
 }
 
 .alimentacao-cards {
@@ -517,6 +518,7 @@ h1, h2, h3, h4 {
 .alimentacao-card p {
   font-size: 1.4rem;
   color: var(--texto-suave);
+
 }
 
 .alimentacao-dica {
@@ -619,52 +621,287 @@ h1, h2, h3, h4 {
     font-size: 13px;
 }
 
-/* AJUSTE PARA CELULARES */
-@media (max-width: 600px) {
-    .footer-container {
-        flex-direction: column;
-        gap: 25px;
-    }
 
-    .footer {
-        padding: 30px 6% 15px;
-    }
+/* Botão do menu para celulares */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  color: var(--verde-escuro);
+  font-size: 3rem;
+  cursor: pointer;
+  padding: 0.5rem;
 }
 
 
-/* Responsividade Geral */
+/* ========================================
+   RESPONSIVIDADE PARA CELULARES E TABLETS
+   ======================================== */
+
+
+/* ==========================================
+   AJUSTES FINAIS DE RESPONSIVIDADE
+   ========================================== */
+
 @media (max-width: 768px) {
-  html {
-    font-size: 56.25%;
+
+  /* Impede conteúdo de ultrapassar a tela */
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  /* Espaçamento padrão das seções */
+  main > section {
+    padding: 3rem 1.8rem;
+  }
+
+  /* Cabeçalho fixo */
+  .header section {
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+  }
+
+  /* Títulos */
+  .title {
+    font-size: 2.6rem;
+    padding: 1.5rem 0.5rem;
+  }
+
+  /* Página inicial */
+  .home-container section {
+    padding: 10rem 1.8rem 3rem;
+    min-height: 100vh;
+  }
+
+  .content {
+    width: 100%;
+    max-width: 100%;
+    padding: 2rem;
   }
 
   .content h3 {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
 
+  /* Sobre nós */
   .about .row {
-    padding: 2.5rem;
+    padding: 2rem;
+    gap: 2rem;
   }
 
-  .about .row .content h3 {
-    text-align: center;
+  /* Nutrição do corpo */
+  .container-li .right-content {
+    padding: 2rem;
   }
 
-  .about .row .container-image img {
-    border-radius: 12px;
+  /* Macronutrientes */
+  .container-macro {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.8rem;
   }
 
-  .container-macro,
-  .alimentacao-cards {
-    grid-template-columns: 1fr;
+  .container-macro .content-macro {
+    min-width: 0;
+    padding: 2rem;
+  }
+
+  /* Guia prático */
+  .guide-container {
+    width: 100%;
+    min-width: 0;
   }
 
   .guide-content {
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .guide-text,
+  .guide-image {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .guide-image img {
+    max-width: 100%;
+  }
+
+  /* Alimentação limpa */
+  .alimentacao-limpa {
+    width: 100%;
+    max-width: 100%;
+    padding: 3rem 1.8rem;
+  }
+
+  .alimentacao-container {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0 auto;
+  }
+
+  .alimentacao-intro {
+    padding: 0;
+    margin-bottom: 3rem;
+  }
+
+  .alimentacao-bloco {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 3rem;
+  }
+
+  .alimentacao-cards {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .alimentacao-card {
+    min-width: 0;
+    padding: 2rem;
+    overflow-wrap: anywhere;
+  }
+
+  .alimentacao-bloco p,
+  .alimentacao-card p,
+  .alimentacao-lista li {
+    overflow-wrap: anywhere;
+    line-height: 1.7;
+  }
+
+  .alimentacao-dica {
+    padding: 1.8rem;
+    margin-top: 1.5rem;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+  }
+
+  .alimentacao-lista {
+    padding-left: 2rem;
+  }
+
+  .alimentacao-final {
+    padding: 2.5rem 2rem;
+  }
+
+  /* Rodapé */
+  .footer {
+    padding: 3rem 2rem 1.5rem;
+  }
+
+  .footer-container {
     flex-direction: column;
-    padding: 2.5rem;
+    gap: 2.5rem;
+  }
+
+  .footer-info,
+  .footer-links,
+  .footer-message {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+
+  main > section {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .home-container section {
+    padding: 9rem 1.5rem 2.5rem;
+  }
+
+  .logo-topo {
+    width: 105px;
+  }
+
+  .content {
+    padding: 1.8rem;
+  }
+
+  .content h3 {
+    font-size: 2.4rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .about .row,
+  .container-li .right-content,
+  .container-macro .content-macro,
+  .guide-content,
+  .alimentacao-card {
+    padding: 1.6rem;
+  }
+
+  .alimentacao-limpa {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .alimentacao-bloco h3 {
+    font-size: 2rem;
+  }
+
+  .alimentacao-final {
+    padding: 2rem 1.5rem;
+  }
+
+  .footer {
+    padding: 2.5rem 1.5rem 1.5rem;
+  }
+}
+
+/* Botão de três traços */
+.menu-toggle {
+  display: none;
+  background: var(--verde-escuro);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1.2rem;
+  font-size: 2.8rem;
+  cursor: pointer;
+}
+
+/* Exibir o botão no celular */
+@media (max-width: 768px) {
+  .header section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 1.5rem;
+    right: 1.5rem;
+    flex-direction: column;
+    background: #fffdf7;
+    border-radius: 10px;
+    padding: 1rem;
+    z-index: 1001;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .navbar.active {
+    display: flex;
   }
 
   .navbar a {
-    margin: 0 1rem;
+    padding: 1.5rem;
   }
 }
